@@ -2,6 +2,7 @@
 // Dependencies
 // //////////////////////////////////
 var express = require('express');
+var path = require('path');
 
 // //////////////////////////////////
 // Express parameters
@@ -17,7 +18,7 @@ app.use(express.json());
 // //////////////////////////////////
 
 // require('./routing/apiRoutes')(app);
-// require('.routing/htmlRoutes')(app);
+require('./app/routing/htmlRoutes.js')(app);
 
 // //////////////////////////////////
 // HEY, LISTEN!
