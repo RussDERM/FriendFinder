@@ -24,7 +24,6 @@ module.exports = function (app) {
   // ///////
 
   app.post('/api/friends', function (req, res) {
-    if (err) throw err;
     friendsList.push(req.body);
     res.json(true);
   })

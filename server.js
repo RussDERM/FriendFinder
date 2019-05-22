@@ -18,8 +18,9 @@ app.use(express.json());
 // //////////////////////////////////
 
 // require('./routing/apiRoutes')(app);
+require('./app/routing/apiRoutes.js')(app);
 require('./app/routing/htmlRoutes.js')(app);
-require('./app/routing/apiRoutes.js')(app)
+
 
 // //////////////////////////////////
 // HEY, LISTEN!
@@ -28,3 +29,5 @@ require('./app/routing/apiRoutes.js')(app)
 app.listen(PORT, function () {
   console.log('I can hear you on PORT: ' + PORT + ', Jon...');
 });
+
+
