@@ -19,7 +19,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif] -->
   <style>
-    div {
+    body {
       font-family: Montserrat;
     }
   </style>
@@ -42,7 +42,8 @@
         <div class="form-group">
           <h1>Question 1</h1>
           <label for="exampleFormControlSelect1">QuestionQuestionQuestionQuesion</label>
-          <select class="form-control" id="question1">
+          <select class="questionSelector form-control" id="question1">
+            <option value=''>------</option>
             <option value='1'>1 - I disagree.</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -54,7 +55,8 @@
         <div class="form-group">
           <h1>Question 2</h1>
           <label for="exampleFormControlSelect1">QuestionQuestionQuestionQuesion</label>
-          <select class="questionSelector" id="question2">
+          <select class="questionSelector form-control" id="question2">
+            <option value=''>------</option>
             <option value='1'>1 - I disagree.</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -66,7 +68,8 @@
         <div class="form-group">
           <h1>Question 3</h1>
           <label for="exampleFormControlSelect1">QuestionQuestionQuestionQuesion</label>
-          <select class="questionSelector" id="question3">
+          <select class="questionSelector form-control" id="question3">
+            <option value=''>------</option>
             <option value='1'>1 - I disagree.</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -78,7 +81,8 @@
         <div class="form-group">
           <h1>Question 4</h1>
           <label for="exampleFormControlSelect1">QuestionQuestionQuestionQuesion</label>
-          <select class="questionSelector" id="question4">
+          <select class="questionSelector form-control" id="question4">
+            <option value=''>------</option>
             <option value='1'>1 - I disagree.</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -90,7 +94,8 @@
         <div class="form-group">
           <h1>Question 5</h1>
           <label for="exampleFormControlSelect1">QuestionQuestionQuestionQuesion</label>
-          <select class="questionSelector" id="question5">
+          <select class="questionSelector form-control" id="question5">
+            <option value=''>------</option>
             <option value='1'>1 - I disagree.</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -102,7 +107,8 @@
         <div class="form-group">
           <h1>Question 6</h1>
           <label for="exampleFormControlSelect1">QuestionQuestionQuestionQuesion</label>
-          <select class="questionSelector" id="question6">
+          <select class="questionSelector form-control" id="question6">
+            <option value=''>------</option>
             <option value='1'>1 - I disagree.</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -114,48 +120,52 @@
         <div class="form-group">
           <h1>Question 7</h1>
           <label for="exampleFormControlSelect1">QuestionQuestionQuestionQuesion</label>
-          <select class="questionSelector" id="question7">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select class="questionSelector form-control" id="question7">
+            <option value=''>------</option>
+            <option value='1'>1 - I disagree.</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5 - I agree.</option>
           </select>
         </div>
         <!-- Question 1 -->
         <div class="form-group">
           <h1>Question 8</h1>
           <label for="exampleFormControlSelect1">QuestionQuestionQuestionQuesion</label>
-          <select class="questionSelector" id="question8">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select class="questionSelector form-control" id="question8">
+            <option value=''>------</option>
+            <option value='1'>1 - I disagree.</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5 - I agree.</option>
           </select>
         </div>
         <!-- Question 1 -->
         <div class="form-group">
           <h1>Question 9</h1>
           <label for="exampleFormControlSelect1">QuestionQuestionQuestionQuesion</label>
-          <select class="questionSelector" id="question9">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select class="questionSelector form-control" id="question9">
+            <option value=''>------</option>
+            <option value='1'>1 - I disagree.</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5 - I agree.</option>
           </select>
         </div>
         <!-- Question 1 -->
         <div class="form-group">
           <h1>Question 10</h1>
           <label for="exampleFormControlSelect1">QuestionQuestionQuestionQuesion</label>
-          <select class="questionSelector" id="question10">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select class="questionSelector form-control" id="question10">
+            <option value=''>------</option>
+            <option value='1'>1 - I disagree.</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5 - I agree.</option>
           </select>
         </div>
         <button id='submit' type="button" class="btn btn-dark">Submit</button>
@@ -181,18 +191,22 @@
       // ////////////////////
       function validation() {
         // define variable that tells us true/false, starts as true
-        var isValid = true;
+        var isValid;
         // select name/pic boxes
         $('.form-control').each(function () {
           // test to see if the value of either is blank
           if ($(this).val === '') {
-            isValid = false
+            isValid == false
+          } else {
+            isValid == true
           }
         });
         // same thing for question selectors
         $('.questionSelector').each(function () {
           if ($(this).val === '') {
-            isValid = false;
+            isValid == false;
+          } else {
+            isValid == true;
           }
         })
         return isValid;
@@ -220,6 +234,30 @@
           ]
         }
         console.log(surveyData);
+        // ////////////////////////
+        // Begin post function ////
+        // ////////////////////////
+        $.post('api/tables', surveyData,
+          function (data) {
+            if (data) {
+              alert('Success...')
+              $('name').val(''),
+                $('#pic-link').val('')
+              $('#question1').val(''),
+                $('#question2').val(''),
+                $('#question3').val(''),
+                $('#question4').val(''),
+                $('#question5').val(''),
+                $('#question6').val(''),
+                $('#question7').val(''),
+                $('#question8').val(''),
+                $('#question9').val(''),
+                $('#question10').val('')
+            }
+          })
+      }
+      else {
+        alert('It was not meant to be...')
       }
     });
 
