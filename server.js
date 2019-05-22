@@ -19,6 +19,7 @@ app.use(express.json());
 
 // require('./routing/apiRoutes')(app);
 require('./app/routing/htmlRoutes.js')(app);
+require('./app/routing/apiRoutes.js')(app)
 
 // //////////////////////////////////
 // HEY, LISTEN!

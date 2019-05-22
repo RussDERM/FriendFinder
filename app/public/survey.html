@@ -32,9 +32,9 @@
         <div class='display-4'>About you</div>
         <div>Please answer the questions..</div>
         <hr class="my-4">
-        <input class="form-control form-control-lg" type="text" placeholder="Your name.." id="name">
+        <input class="aboutMe form-control form-control-lg" type="text" placeholder="Your name.." id="name">
         <br>
-        <input class="form-control" type="text" placeholder="Please proivde a link to a depiction of yourself.."
+        <input class="aboutMe form-control" type="text" placeholder="Please proivde a link to a depiction of yourself.."
           id='pic-link'>
         <hr class="my-4">
 
@@ -191,24 +191,25 @@
       // ////////////////////
       function validation() {
         // define variable that tells us true/false, starts as true
-        var isValid;
+        var isValid = true;
         // select name/pic boxes
-        $('.form-control').each(function () {
+        $('.aboutMe').each(function () {
           // test to see if the value of either is blank
-          if ($(this).val === '') {
-            isValid == false
+          if ($(this).val() === "") {
+            isValid = false;
           } else {
-            isValid == true
+            isValid = true;
           }
         });
         // same thing for question selectors
         $('.questionSelector').each(function () {
-          if ($(this).val === '') {
-            isValid == false;
+          if ($(this).val() === "") {
+            isValid = false;
           } else {
-            isValid == true;
+            isValid = true;
           }
         })
+        console.log(isValid);
         return isValid;
       }
       // ///////////////////////////////
@@ -216,7 +217,11 @@
       // ///////////////////////////////
       // begin survey object creation //
       // ///////////////////////////////
+
+
       if (validation()) {
+
+
         var surveyData = {
           name: $('#name').val(),
           photo: $('#pic-link').val(),
@@ -237,7 +242,7 @@
         // ////////////////////////
         // Begin post function ////
         // ////////////////////////
-        $.post('api/tables', surveyData,
+        $.post('/api/friends', surveyData,
           function (data) {
             if (data) {
               alert('Success...')
@@ -257,7 +262,7 @@
           })
       }
       else {
-        alert('It was not meant to be...')
+        alert('Please finish the whole form..')
       }
     });
 
